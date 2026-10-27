@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore your zodiac sign with Cosmic Compass.">
+    <title>Cosmic Compass | Discover Your Zodiac</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="/">✦ Cosmic Compass</a>
+        <nav><a class="nav-link" href="/birth-chart.html">Birth Chart</a></nav>
+        <span class="nav-tag">YOUR COSMIC JOURNEY</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="eyebrow">✧ THE UNIVERSE WITHIN YOU ✧</div>
+            <h1>Discover Your <span>Cosmic</span> Story</h1>
+            <p class="hero-description">Enter your birth details and discover your Sun sign with a little cosmic inspiration.</p>
+
+            <div class="content-grid">
+                <section class="form-card">
+                    <div class="section-icon">☾</div>
+                    <h2>Your Birth Details</h2>
+                    <p class="card-description">Every journey begins with a moment in time.</p>
+                    <form id="birth-form">
+                        <label for="birth_date">Date of birth</label>
+                        <input type="date" id="birth_date" name="birth_date" required>
+                        <label for="birth_time">Time of birth</label>
+                        <input type="time" id="birth_time" name="birth_time" required>
+                        <label for="birthplace">Place of birth</label>
+                        <input type="text" id="birthplace" name="birthplace" placeholder="e.g. Bengaluru, India" maxlength="150" required>
+                        <button type="submit" id="submit-button"><span>Discover My Zodiac</span><span aria-hidden="true">→</span></button>
+                        <p class="privacy-note">✧ Your details are used to generate this reading.</p>
+                    </form>
+                </section>
+
+                <section class="result-card" id="result-card" aria-live="polite">
+                    <div class="stars" aria-hidden="true">✦ · ✧ · ✦</div>
+                    <div class="zodiac-placeholder" id="zodiac-symbol">✧</div>
+                    <p class="result-label" id="result-label">YOUR COSMIC GUIDE</p>
+                    <h2 id="result-title">Your story awaits</h2>
+                    <p id="result-description" class="result-description">Complete your birth details to reveal your Sun sign and receive your first cosmic reading.</p>
+                    <div class="result-details" id="result-details" hidden>
+                        <p><strong>Birth date:</strong> <span id="result-date"></span></p>
+                        <p><strong>Birth time:</strong> <span id="result-time"></span></p>
+                        <p><strong>Birthplace:</strong> <span id="result-place"></span></p>
+                    </div>
+                    <p class="result-message" id="result-message"></p>
+                </section>
+            </div>
+        </section>
+
+        <section class="zodiac-section">
+            <p class="eyebrow">THE CELESTIAL CIRCLE</p>
+            <h2>Meet the Twelve Signs</h2>
+            <p class="section-description">Each sign has its own place in the zodiac tradition.</p>
+            <div class="zodiac-grid">
+                <div class="zodiac-item"><span>♈</span><strong>Aries</strong><small>Mar 21 – Apr 19</small></div>
+                <div class="zodiac-item"><span>♉</span><strong>Taurus</strong><small>Apr 20 – May 20</small></div>
+                <div class="zodiac-item"><span>♊</span><strong>Gemini</strong><small>May 21 – Jun 20</small></div>
+                <div class="zodiac-item"><span>♋</span><strong>Cancer</strong><small>Jun 21 – Jul 22</small></div>
+                <div class="zodiac-item"><span>♌</span><strong>Leo</strong><small>Jul 23 – Aug 22</small></div>
+                <div class="zodiac-item"><span>♍</span><strong>Virgo</strong><small>Aug 23 – Sep 22</small></div>
+                <div class="zodiac-item"><span>♎</span><strong>Libra</strong><small>Sep 23 – Oct 22</small></div>
+                <div class="zodiac-item"><span>♏</span><strong>Scorpio</strong><small>Oct 23 – Nov 21</small></div>
+                <div class="zodiac-item"><span>♐</span><strong>Sagittarius</strong><small>Nov 22 – Dec 21</small></div>
+                <div class="zodiac-item"><span>♑</span><strong>Capricorn</strong><small>Dec 22 – Jan 19</small></div>
+                <div class="zodiac-item"><span>♒</span><strong>Aquarius</strong><small>Jan 20 – Feb 18</small></div>
+                <div class="zodiac-item"><span>♓</span><strong>Pisces</strong><small>Feb 19 – Mar 20</small></div>
+            </div>
+        </section>
+    </main>
+    <footer><p>✦ Cosmic Compass</p><p>Astrology is for entertainment and personal reflection only.</p></footer>
+</body>
+</html>

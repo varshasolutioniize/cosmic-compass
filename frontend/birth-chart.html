@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore your Sun, Moon, Rising signs, personality, relationships and career themes with Cosmic Compass.">
+    <title>Cosmic Compass | Birth Chart</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/birth-chart.js" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="brand" href="/">✦ Cosmic Compass</a>
+        <a class="nav-link" href="/">Home</a>
+        <span class="nav-tag">YOUR COSMIC JOURNEY</span>
+    </header>
+
+    <!-- Birth Sky Map -->
+    <section class="sky-map-section" id="birth-sky-map">
+        <div class="sky-map-heading">
+            <span class="sky-map-icon">🌙</span>
+            <h2>Your Birth Sky</h2>
+            <p>Discover the Moon and stars from your special moment.</p>
+        </div>
+    
+        <div class="sky-map-details">
+            <p><strong>Birth date:</strong> <span id="sky-birth-date">—</span></p>
+            <p><strong>Birth time:</strong> <span id="sky-birth-time">—</span></p>
+            <p><strong>Birthplace:</strong> <span id="sky-birth-place">—</span></p>
+        </div>
+    
+        <div class="sky-map-canvas-container">
+            <canvas id="birth-sky-canvas" aria-label="Visualization of the sky at your birth date and time">
+            </canvas>
+            <p id="sky-map-status" role="status">
+                Calculate your birth chart to explore your sky.
+            </p>
+        </div>
+    
+        <div class="moon-information">
+            <h3>🌙 Your Moon on That Day</h3>
+            <p id="sky-moon-phase">Moon phase will appear here.</p>
+            <p id="sky-moon-details"></p>
+        </div>
+    </section>
+
+    <main>
+        <section class="birth-chart-header">
+            <a class="back-link" href="/">← Back to Home</a>
+            <p class="eyebrow">✧ YOUR CELESTIAL BLUEPRINT ✧</p>
+            <h1>Discover Your <span>Birth Chart</span></h1>
+            <p>Explore your astrological signs and discover what traditional astrology says about your personality,
+                emotions and potential.</p>
+        </section>
+
+        <section class="birth-chart-container">
+            <div class="birth-chart-card">
+                <h2>Your Birth Details</h2>
+
+                <form id="birth-chart-form">
+                    <label for="chart-birth-date">Date of birth</label>
+                    <input type="date" id="chart-birth-date" name="birth_date" required>
+
+                    <label for="chart-birth-time">Time of birth</label>
+                    <input type="time" id="chart-birth-time" name="birth_time" required>
+
+                    <label for="chart-birthplace">Place of birth</label>
+                    <input type="text" id="chart-birthplace" name="birthplace" placeholder="e.g. Bengaluru, India"
+                        maxlength="150" required>
+
+                    <button type="submit" id="chart-submit-button">
+                        Calculate My Birth Chart ✨
+                    </button>
+
+                    <p id="chart-error" role="alert"></p>
+                </form>
+            </div>
+
+            <section id="birth-chart-results" class="birth-chart-results" aria-live="polite" hidden>
+                <h2>Your Cosmic Birth Chart</h2>
+
+                <p class="chart-intro">
+                    Your birth chart is a symbolic map of the sky at your birth.
+                    Explore these three important placements in traditional astrology.
+                </p>
+
+                <!-- Main signs -->
+                <div class="birth-chart-grid">
+                    <article class="birth-chart-item">
+                        <span class="chart-icon" id="chart-sun-icon">☀</span>
+                        <h3>Sun Sign</h3>
+                        <p id="chart-sun-sign">Not calculated yet</p>
+                        <small>Your identity and self-expression</small>
+                    </article>
+
+                    <article class="birth-chart-item">
+                        <span class="chart-icon" id="chart-moon-icon">☾</span>
+                        <h3>Moon Sign</h3>
+                        <p id="chart-moon-sign">Not calculated yet</p>
+                        <small>Your emotions and inner world</small>
+                    </article>
+
+                    <article class="birth-chart-item">
+                        <span class="chart-icon" id="chart-rising-icon">✧</span>
+                        <h3>Rising Sign</h3>
+                        <p id="chart-rising-sign">Not calculated yet</p>
+                        <small>Your outward personality</small>
+                    </article>
+                </div>
+
+                <!-- Combined interpretation -->
+                <section class="interpretation-section">
+                    <p class="eyebrow">YOUR COSMIC STORY</p>
+                    <h2>Understanding Your Signs</h2>
+                    <p>
+                        Each placement represents a different theme in astrology.
+                        Together, they offer a framework for personal reflection.
+                    </p>
+
+                    <div class="interpretation-grid">
+                        <article class="interpretation-card">
+                            <span class="interpretation-icon">🌟</span>
+                            <h3>Your Personality</h3>
+                            <p id="personality-interpretation">
+                                Your personality interpretation will appear after your chart is calculated.
+                            </p>
+                        </article>
+
+                        <article class="interpretation-card">
+                            <span class="interpretation-icon">💗</span>
+                            <h3>Love & Relationships</h3>
+                            <p id="love-interpretation">
+                                Your relationship interpretation will appear after your chart is calculated.
+                            </p>
+                        </article>
+
+                        <article class="interpretation-card">
+                            <span class="interpretation-icon">💼</span>
+                            <h3>Career & Talents</h3>
+                            <p id="career-interpretation">
+                                Your career interpretation will appear after your chart is calculated.
+                            </p>
+                        </article>
+
+                        <article class="interpretation-card">
+                            <span class="interpretation-icon">🌱</span>
+                            <h3>Strengths & Growth</h3>
+                            <p id="growth-interpretation">
+                                Your strengths and growth interpretation will appear after your chart is calculated.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Detailed interpretations for each sign -->
+                <section class="interpretation-section">
+                    <p class="eyebrow">EXPLORE YOUR INNER UNIVERSE</p>
+                    <h2>Your Sign-by-Sign Reading</h2>
+
+                    <article class="sign-reading">
+                        <div class="sign-reading-heading">
+                            <span>☀</span>
+                            <div>
+                                <h3 id="sun-reading-title">Your Sun Sign</h3>
+                                <p>Core identity, motivation and self-expression</p>
+                            </div>
+                        </div>
+                        <p id="sun-reading">
+                            Your Sun sign reading will appear here.
+                        </p>
+                    </article>
+
+                    <article class="sign-reading">
+                        <div class="sign-reading-heading">
+                            <span>☾</span>
+                            <div>
+                                <h3 id="moon-reading-title">Your Moon Sign</h3>
+                                <p>Emotional needs, instincts and inner world</p>
+                            </div>
+                        </div>
+                        <p id="moon-reading">
+                            Your Moon sign reading will appear here.
+                        </p>
+                    </article>
+
+                    <article class="sign-reading">
+                        <div class="sign-reading-heading">
+                            <span>✧</span>
+                            <div>
+                                <h3 id="rising-reading-title">Your Rising Sign</h3>
+                                <p>First impressions and approach to new experiences</p>
+                            </div>
+                        </div>
+                        <p id="rising-reading">
+                            Your Rising sign reading will appear here.
+                        </p>
+                    </article>
+                </section>
+
+                <!-- Birth details -->
+                <section class="birth-chart-summary">
+                    <h3>Your Birth Details</h3>
+                    <p><strong>Date:</strong> <span id="chart-result-date"></span></p>
+                    <p><strong>Time:</strong> <span id="chart-result-time"></span></p>
+                    <p><strong>Place:</strong> <span id="chart-result-place"></span></p>
+                    <p><strong>Timezone:</strong> <span id="chart-result-timezone"></span></p>
+                </section>
+
+                <p class="chart-note">
+                    ✦ Astrology is for entertainment and personal reflection only.
+                    These interpretations are not scientifically established personality assessments
+                    or predictions of future events.
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>✦ Cosmic Compass</p>
+        <p>Explore the universe. Reflect on yourself.</p>
+        <p>Astrology is for entertainment and personal reflection only.</p>
+    </footer>
+</body>
+
+</html>
