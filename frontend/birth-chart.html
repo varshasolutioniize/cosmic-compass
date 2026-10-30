@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmic Birth Chart | Cosmic Compass</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/birth-chart.js" defer></script>
+</head>
+
+<body>
+
+    <header class="birth-chart-header">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>🌌 Your Cosmic Birth Chart</h1>
+        <p>Discover the celestial signs associated with your birth.</p>
+    </header>
+
+    <main class="birth-chart-container">
+
+        <section class="birth-chart-card">
+
+            <h2>Enter Your Birth Details</h2>
+
+            <form id="birth-chart-form">
+
+                <label for="chart-birth-date">Date of Birth</label>
+                <input type="date" id="chart-birth-date" name="birth_date" required>
+
+                <label for="chart-birth-time">Time of Birth</label>
+                <input type="time" id="chart-birth-time" name="birth_time" required>
+
+                <label for="chart-birthplace">Place of Birth</label>
+                <input type="text" id="chart-birthplace" name="birthplace"
+                    placeholder="e.g. Bengaluru, Karnataka, India" required>
+
+                <button type="submit" id="chart-submit-button">
+                    Generate Birth Chart ✨
+                </button>
+
+            </form>
+
+            <p id="chart-error" role="alert"></p>
+
+        </section>
+
+        <section id="birth-chart-results" class="birth-chart-results" hidden>
+            <div id="chart-error"></div>
+            <div id="birth-chart-results" hidden>
+
+            <h2>Your Cosmic Profile</h2>
+
+            <div class="birth-chart-grid">
+
+                <article class="birth-chart-item">
+                    <span class="chart-icon">☀️</span>
+                    <h3>Sun Sign</h3>
+                    <p id="chart-sun-sign">Not calculated yet</p>
+                    <small>Your main zodiac sign</small>
+                </article>
+
+                <article class="birth-chart-item">
+                    <span class="chart-icon" id="chart-sun-icon">♈</span>
+                    <h3>Sun Sign</h3>
+                    <p id="chart-sun-sign">Not calculated yet</p>
+                    <small>Requires an astronomical calculation</small>
+                </article>
+
+                <article class="birth-chart-item">
+                    <span class="chart-icon">⬆️</span>
+                    <h3>Rising Sign</h3>
+                    <p>Not calculated yet</p>
+                    <small>Requires birth time and location calculations</small>
+                </article>
+
+            </div>
+
+            <div class="birth-chart-summary">
+                <h3>Your Birth Information</h3>
+
+                <p>
+                    <strong>Date:</strong>
+                    <span id="chart-result-date"></span>
+                </p>
+
+                <p>
+                    <strong>Time:</strong>
+                    <span id="chart-result-time"></span>
+                </p>
+
+                <p>
+                    <strong>Place:</strong>
+                    <span id="chart-result-place"></span>
+                </p>
+            </div>
+
+            <p class="chart-note">
+                Astrology is a traditional belief system and is intended
+                for entertainment and personal reflection.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
